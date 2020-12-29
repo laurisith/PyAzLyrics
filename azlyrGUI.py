@@ -240,8 +240,8 @@ class AppGUI:
                                     az_lyrics = PyAZLyrics.getLyricsMultiComplex(songs_base[artist], album, song, number)
 
                                 if az_lyrics != 'NoLyrics':
-                                    lyrics_added_count += 1
                                     if lyrics == 'Empty':
+                                        lyrics_added_count += 1
                                         final_lyrics = artist + ' - ' + song + '\n' + az_lyrics
                                         final_lyrics = final_lyrics.replace('[', '(')
                                         final_lyrics = final_lyrics.replace(']', ')')
@@ -252,6 +252,7 @@ class AppGUI:
                                         rep_txt.write(
                                             'Lyrics was added to file.\n')
                                     elif lyrics == '':
+                                        lyrics_added_count += 1
                                         final_lyrics = artist + ' - ' + song + '\n' + az_lyrics
                                         final_lyrics = final_lyrics.replace('[', '(')
                                         final_lyrics = final_lyrics.replace(']', ')')
