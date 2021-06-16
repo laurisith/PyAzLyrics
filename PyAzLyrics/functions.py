@@ -102,7 +102,7 @@ class PyAZLyrics:
             song = song.lower().strip()
             for album in albums:
                 for track in album.tracks:
-                    if track.name in song:
+                    if song in track.name or track.name in song:
                         return track.getLyrics()
             return 'NoLyrics'
 
@@ -116,7 +116,7 @@ class PyAZLyrics:
             album_name = album_name.lower().strip()
             for album in albums:
                 for track in album.tracks:
-                    if track.name in song or \
+                    if song in track.name or track.name in song or \
                             (track.album in album_name and tracknumber == track.number):
                         return track.getLyrics()
             return 'NoLyrics'
@@ -129,7 +129,7 @@ class PyAZLyrics:
             song = song.lower().strip()
             for album in albums:
                 for track in album.tracks:
-                    if track.name in song:
+                    if song in track.name or track.name in song:
                         return track.getLyrics()
             return 'NoLyrics'
 
@@ -142,7 +142,7 @@ class PyAZLyrics:
             album_name = album_name.lower().strip()
             for album in albums:
                 for track in album.tracks:
-                    if track.name in song or\
+                    if song in track.name or track.name in song or\
                             (track.album in album_name and tracknumber == track.number):
                         return track.getLyrics()
             return 'NoLyrics'
@@ -178,8 +178,8 @@ class PyAZLyrics:
             return albums
 
 def main():
-    artist = 'öööööööö'
-    song = 'Overkill'
+    artist = 'three days grace'
+    song = 'Are You Ready'
     print(PyAZLyrics.getLyricsSingleSimple(artist, song))
 
 
